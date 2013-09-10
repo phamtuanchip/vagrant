@@ -1,0 +1,4 @@
+vagrant
+=======
+
+for vagrant practice
