@@ -71,6 +71,9 @@ then
 
   InstallCurl
 
+  # add script delivery.sh and deploy.sh to crontab
+  # AddScriptToCrontab /vagrant/scripts/delivery.sh 5
+  AddScriptToCrontab /vagrant/scripts/deploy.sh 5
    
 
 fi

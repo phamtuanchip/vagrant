@@ -65,3 +65,18 @@ sudo apt-get -y install curl
 
 
 }
+
+################################################################################################
+# run a job every 't' minutes
+# $1 job name
+# $2 the number of minutes the job will run after
+function AddScriptToCrontab() {
+
+  # try to remove the old schedule of the job
+  sudo crontab -l | grep -v $1 > /tmp/cron.$$
+  # add the new schedule
+  sudo echo "*/$2 * * * * bash $1" >> /tmp/cron.$$
+ 
+  sudo crontab /tmp/cron.$$
+  sudo rm -f /tmp/cron.$$
+}
